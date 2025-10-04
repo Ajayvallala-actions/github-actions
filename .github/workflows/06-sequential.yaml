@@ -1,0 +1,25 @@
+name: parellel
+on: [push]
+jobs:
+ job-1:
+  runs-on: ubuntu-latest
+  steps:
+    - name: job-1
+      run: echo "Hi, i am from job-1"
+ job-2:
+  needs: job-1
+  runs-on: ubuntu-latest
+  steps:
+    - name: job-2
+      run: echo "Hi, i am from job-2"
+ job-3:
+  needs: job-2
+  runs-on: ubuntu-latest
+  steps:
+    - name: job-3
+      run: echo "Hi, i am from job-3"
+ job-4:
+  runs-on: ubuntu-latest
+  steps:
+    - name: job-4
+      run: echo "Hi, i am from job-4"
