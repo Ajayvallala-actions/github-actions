@@ -8,4 +8,5 @@ jobs:
     if: github.ref=='refs/heads/main'
     run: echo Hello World
   - name: step2
+    if: github.ref=='refs/heads/feature-**'
     run: echo Hello GitHub Actions
