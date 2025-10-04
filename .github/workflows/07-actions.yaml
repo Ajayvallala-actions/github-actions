@@ -7,4 +7,4 @@ jobs:
      - name: git code checkout
        uses: actions/checkout@v5
      - name: list files
-       run: ls -la
+       run: cd/.github/workflows | ls -la
