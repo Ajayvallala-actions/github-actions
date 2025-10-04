@@ -1,0 +1,33 @@
+name: inputs
+on:
+ workflow_dispatch:
+   inputs:
+     loglevel:
+      description: 'log level'
+      required: true
+      default: 'warning'
+      type: choice
+      options:
+        - info
+        - warning
+        - debug
+     print-tag:
+      description: 'True to print to stdout'
+      required: true
+      type: boolean
+     tags:
+      description: 'Image tags'
+      required: true
+      type: string
+     envirnoment:
+      description: 'Envirnoment to run tests'
+      required: true
+      type: environment
+jobs:
+  print-tag:
+   runs-on: ubuntu:latest
+   steps:
+     - name: print the input tag to stdout
+       run: echo image tag is ${{ inputs.tags}}
+     - name: print the environment
+       run: echo image tag is ${{ inputs.envirnoment}}
