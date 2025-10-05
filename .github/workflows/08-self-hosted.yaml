@@ -1,0 +1,12 @@
+name: self-hosted
+on: [push]
+jobs:
+ self:
+  runs-on: self-hosted
+  steps:
+   - name: print hello
+     run: echo "hello-world"
+   - name: git checkout
+     uses: actions/checkout@v5
+   - name: list files
+     run: cd .github/workflows && ls -la
